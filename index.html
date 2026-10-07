@@ -44,7 +44,7 @@ footer{padding-block:28px 40px;font-size:13px;color:var(--muted)}
 </main>
 <footer class="wrap">非官方整理，與各賣場無合作；價格以賣場現場標示為準。</footer>
 <script>
-const L = [{"slug": "px-20261002", "store": "全聯", "period": "10/2～10/15", "start": "2026-10-02", "end": "2026-10-15", "n": 858}, {"slug": "wjf-20260930", "store": "萬家福", "period": "9/30～10/13", "start": "2026-09-30", "end": "2026-10-13", "n": 372}];
+const L = [{"slug": "px-20261002", "store": "全聯", "period": "10/2～10/15", "start": "2026-10-02", "end": "2026-10-15", "n": 858}, {"slug": "wjf-20260930", "store": "萬家福", "period": "9/30～10/13", "start": "2026-09-30", "end": "2026-10-13", "n": 372}, {"slug": "costco-20260928", "store": "好市多", "period": "9/28～10/25", "start": "2026-09-28", "end": "2026-10-25", "n": 26}];
 const today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);   // 台灣日期
 const card = x => `<li><a class="card" href="${x.slug}/"><span><span class="store">${x.store}</span>${x.end >= today ? '<span class="live">特價中</span>' : ''}<br><span class="when">${x.period}</span></span><span class="n">${x.n} 樣 ›</span></a></li>`;
 const now = L.filter(x => x.end >= today), old = L.filter(x => x.end < today);

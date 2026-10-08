@@ -202,6 +202,8 @@ document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click'
   st.g = b.dataset.g; history.replaceState(null, '', st.g === 'all' ? location.pathname : '#' + st.g); render();
 }));
 document.querySelector('[data-k="bogo"]').addEventListener('click', () => { st.bogo = !st.bogo; render(); });
+// 10-08 Benson：這檔沒有買一送一（好市多）就不顯示這顆按鈕
+if (!D.some(it => it.k === 'bogo')) document.querySelector('[data-k="bogo"]').style.display = 'none';
 $('#sort').addEventListener('change', e => { st.sort = e.target.value; render(); });
 render();
 </script>

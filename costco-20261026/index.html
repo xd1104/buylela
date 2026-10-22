@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>好市多 本檔特價清單 10/26～11/22｜買了啦</title>
+<meta name="description" content="好市多 10/26～11/22 本檔特價完整 67 樣：吃的 25 樣、用的 42 樣。非官方整理，價格以賣場現場標示為準。">
+<meta property="og:title" content="好市多 本檔特價完整清單 10/26～11/22">
+<meta property="og:description" content="完整 67 樣，可搜尋、可分吃的／用的。非官方整理。">
+<meta name="theme-color" content="#2E144A">
+<link rel="icon" href="../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<style>
+:root{
+  --ground:#F4F1F7; --surface:#FFFFFF; --ink:#24172F; --muted:#6C6180; --line:#E3DCEA;
+  --brand:#2E144A; --brand-ink:#FFF6E4; --gold:#E2B44E; --gold-ink:#4A3200;
+  --sale:#C0283F; --chip:#ECE6F2; --chip-on:#2E144A; --chip-on-ink:#FFF6E4;
+  --font:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#15101C; --surface:#1F1829; --ink:#F1EAF7; --muted:#A59AB5; --line:#352B42;
+    --brand:#2E144A; --brand-ink:#FFF6E4; --gold:#E2B44E; --gold-ink:#2A1C00;
+    --sale:#FF7088; --chip:#2B2238; --chip-on:#E2B44E; --chip-on-ink:#24172F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#15101C; --surface:#1F1829; --ink:#F1EAF7; --muted:#A59AB5; --line:#352B42;
+  --sale:#FF7088; --chip:#2B2238; --chip-on:#E2B44E; --chip-on-ink:#24172F; --gold-ink:#2A1C00;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 15px/1.55 var(--font);
+  padding-top:env(safe-area-inset-top,0px)}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px}
+
+/* 上方紫色帶：品牌＋這一檔 */
+.top{background:var(--brand);color:var(--brand-ink);padding-block:18px 20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;letter-spacing:.08em}
+.brand img{width:40px;height:40px;border-radius:50%}
+.brand a{color:inherit;text-decoration:none}
+h1{margin:14px 0 6px;font-size:clamp(24px,6.4vw,32px);font-weight:900;line-height:1.25;text-wrap:balance}
+h1 .gold{color:var(--gold)}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;opacity:.92}
+.meta b{color:var(--gold);font-weight:700}
+.rule{margin:8px 0 0;font-size:13px;opacity:.75}
+
+.note{margin:14px 0 0;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  font-size:13px;color:var(--muted)}
+.note strong{color:var(--ink)}
+
+/* 黏在上方的篩選列 */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);
+  padding-block:12px 10px;border-bottom:1px solid var(--line)}
+.search{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);
+  border-radius:10px;padding:0 12px}
+.search svg{flex:none;color:var(--muted)}
+.search input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);
+  font:inherit;font-size:16px;padding:10px 0}
+.search:focus-within{border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 30%,transparent)}
+.clear{border:0;background:none;color:var(--muted);font-size:20px;line-height:1;padding:4px;cursor:pointer}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.seg{display:flex;background:var(--chip);border-radius:999px;padding:3px}
+.seg button,.chip{border:0;font:inherit;font-size:14px;font-weight:500;color:var(--ink);background:transparent;
+  border-radius:999px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"],.chip[aria-pressed="true"]{background:var(--chip-on);color:var(--chip-on-ink)}
+.chip{background:var(--chip)}
+.seg button small{opacity:.7;font-size:12px;margin-left:3px}
+select{font:inherit;font-size:14px;color:var(--ink);background:var(--chip);border:0;border-radius:999px;
+  padding:6px 10px;margin-left:auto}
+button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);margin:10px 0 0}
+
+/* 清單 */
+ul{list-style:none;margin:0;padding:0}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.name{font-weight:700;font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.sub{grid-column:1;font-size:13px;color:var(--muted)}
+.cond{grid-column:1/-1;font-size:12.5px;color:var(--muted);line-height:1.5}
+.cond:empty{display:none}
+.price{grid-row:1/span 2;grid-column:2;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.was{font-size:13px;color:var(--muted)}
+.was s{text-decoration-thickness:1.5px}
+.now{font-size:24px;font-weight:900;color:var(--sale);line-height:1.15}
+.now small{font-size:12px;font-weight:500;color:var(--muted);margin-left:2px}
+.tag{display:inline-block;margin-top:4px;font-size:12px;font-weight:700;padding:1px 8px;border-radius:6px;
+  background:var(--gold);color:var(--gold-ink)}
+mark{background:color-mix(in srgb,var(--gold) 45%,transparent);color:inherit;border-radius:3px}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+
+footer{padding-block:28px 40px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}
+@media (prefers-reduced-motion:no-preference){.chip,.seg button{transition:background .15s,color .15s}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><a href="../"><img src="../logo.png" alt=""></a><a href="../">買了啦</a></div>
+    <h1>好市多 本檔特價<br><span class="gold">完整 67 樣清單</span></h1>
+    <div class="meta"><span>檔期 <b>10/26～11/22</b></span><span>吃的 25 樣</span><span>用的 42 樣</span></div>
+    <p class="rule">會員優惠到 11/22｜賣場售價（標「線上」的是網購價）｜「平日限定」只到 11/20、週六日不適用｜每張會員卡每樣限購一件｜數量有限、售完為止</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="note"><strong>非官方整理，與賣場無合作。</strong>價格照賣場 DM 整理，以賣場現場標示為準；部分分店可能沒賣。只收直接降價、買一送一和多件優惠。</p>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <label class="search" for="q">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="搜尋品名，例如：牛奶、衛生紙" autocomplete="off" enterkeyhint="search">
+      <button class="clear" id="clr" type="button" aria-label="清除搜尋" hidden>×</button>
+    </label>
+    <div class="row">
+      <div class="seg" role="group" aria-label="分類">
+        <button type="button" data-g="all" aria-pressed="true">全部</button>
+        <button type="button" data-g="eat" aria-pressed="false">吃的<small>25</small></button>
+        <button type="button" data-g="use" aria-pressed="false">用的<small>42</small></button>
+      </div>
+      <button type="button" class="chip" data-k="bogo" aria-pressed="false">只看買一送一</button>
+      <select id="sort" aria-label="排序">
+        <option value="dm">照 DM 頁序</option>
+        <option value="off">折扣多的先</option>
+        <option value="low">價格低的先</option>
+      </select>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </div>
+</div>
+
+<main class="wrap">
+  <ul id="list"></ul>
+  <p class="empty" id="empty" hidden></p>
+</main>
+
+<footer class="wrap">
+  <p>資料來源：好市多官方會員優惠 PDF（優惠期間 2026/10/26～11/22），每樣價格都由兩次獨立讀取核對；酒、藥品與沒有標價的折扣（輪胎、秤重豬肉每公斤省、隱形眼鏡）沒有收。整理日期 2026/10/22。</p>
+  <p>發現價格寫錯？到影片留言告訴我們，確認後 24 小時內更正。</p>
+  <p>品名已拿掉包裝上的功效字；萬家福線上商城（網購）的優惠沒有收進來。</p>
+  <p><a href="../" style="color:inherit">買了啦・各賣場特價清單</a></p>
+</footer>
+
+<script>
+const D = [{"n":"32 Degrees 男羽絨背心","s":"亞洲尺寸：S-XL","g":"use","k":"cut","o":999,"p":799.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.8},{"n":"撈王 藤椒酸菜鍋湯底","s":"每包1200公克 2包入","g":"eat","k":"cut","o":329,"p":259.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.787},{"n":"F.I. 愛貓乾糧 化毛配方","s":"9.07公斤","g":"use","k":"cut","o":599,"p":479.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.8},{"n":"貝思寶兒 蜜桃果茶","s":"每瓶330毫升 24瓶入","g":"eat","k":"cut","o":299,"p":239.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.799},{"n":"明治 北海道香草風味牛奶雪糕","s":"每枝43毫升 30枝入","g":"eat","k":"cut","o":389,"p":299.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.769},{"n":"3M 安美浴室防滑地墊","s":"尺寸約：45 × 75公分 2入","g":"use","k":"cut","o":679,"p":539.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.794},{"n":"Skechers 女隱形襪","s":"8入組","g":"use","k":"cut","o":399,"p":319.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.799},{"n":"Moccona 義式咖啡膠囊組","s":"適用 NESPRESSO 咖啡機 60顆","g":"eat","k":"cut","o":689,"p":539.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.782},{"n":"Kid-O 奶油三明治家庭號","s":"90包入 共1530公克","g":"eat","k":"cut","o":339,"p":269.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"平日限定：週一～週五，到 11/20，週六日不適用","pg":1,"r":0.794},{"n":"Samsung 65吋 MINILED 顯示器","s":"型號 UA65M1EHAXXZW","g":"use","k":"cut","o":24999,"p":19999.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.8},{"n":"飛利浦 智能系列三刀頭電鬍刀","s":"型號 S6830/95","g":"use","k":"cut","o":4389,"p":3489.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.795},{"n":"伊萊克斯 無線吸塵器","s":"型號 WQ71-2BSWF","g":"use","k":"cut","o":6899,"p":5199.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.754},{"n":"Backbone 人體工學全網椅","s":"尺寸約：寬70 X 深63 X 高124-134公分","g":"use","k":"cut","o":5699,"p":4499.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.789},{"n":"Tresanti 電動升降桌","s":"尺寸約：寬120 X 深60 X 高75-124公分","g":"use","k":"cut","o":6299,"p":4899.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.778},{"n":"Looploop 磁吸式傳輸充電線 3入組（黑色 / 白色）","s":"3入組／黑色、白色","g":"use","k":"cut","o":699,"p":539.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.771},{"n":"佳麗惠 紐西蘭羊毛被 雙人","s":"尺寸約：180 × 210公分","g":"use","k":"cut","o":2399,"p":1899.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.792},{"n":"佳麗惠 紐西蘭羊毛被 雙人加大","s":"尺寸約：210 × 240公分","g":"use","k":"cut","o":2999,"p":2349.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":2,"r":0.783},{"n":"LG 315公升雙頻雙門冰箱","s":"型號 GN-L312SV","g":"use","k":"cut","o":17999,"p":14399.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.8},{"n":"滿意寶寶 瞬潔乾爽紙尿褲","s":"M 228片／L 192片","g":"use","k":"cut","o":1245,"p":995.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.799},{"n":"TCL 75吋 MINILED 顯示器","s":"型號 75C6K","g":"use","k":"cut","o":34799,"p":27799.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.799},{"n":"滿意寶寶 哆啦A夢輕巧褲","s":"L 176片／XL 152片／XXL 104片","g":"use","k":"cut","o":1049,"p":839.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.8},{"n":"歐司朗 白光 / 自然光 20W LED 燈泡 4入","s":"4入","g":"use","k":"cut","o":749,"p":599.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.8},{"n":"舒特膚 潤膚乳","s":"每瓶591毫升 2瓶入","g":"use","k":"cut","o":615,"p":465.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.756},{"n":"舒酸定 牙膏（進階配方）","s":"每條184公克 4條入","g":"use","k":"cut","o":689,"p":535.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.776},{"n":"舒酸定 3D 薄型軟毛牙刷","s":"8入","g":"use","k":"cut","o":369,"p":289.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.783},{"n":"蘭諾 衣物芳香豆 青檸紫羅蘭","s":"885毫升+1810毫升補充包","g":"use","k":"cut","o":799,"p":639.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":3,"r":0.8},{"n":"寶瀅 全效能新配方洗衣凝露","s":"4公升 100蓋次","g":"use","k":"cut","o":699,"p":539.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.771},{"n":"康寶 港式酸辣 / 金黃玉米濃湯","s":"每包46.6公克 / 每包56.3公克 皆為10包入","g":"eat","k":"cut","o":319,"p":249.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.781},{"n":"卡迪那 MINI 經典美味雙享組","s":"18包入 共774公克","g":"eat","k":"cut","o":299,"p":239.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.799},{"n":"高端食品 藜麥椒鹽蘇打餅","s":"每包80公克 10包入","g":"eat","k":"cut","o":369,"p":289.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.783},{"n":"Witor's 綜合含餡松露造型巧克力","s":"1公斤","g":"eat","k":"cut","o":559,"p":445.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.796},{"n":"手信坊 含餡蛋捲","s":"24條入 共480公克","g":"eat","k":"cut","o":339,"p":269.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.794},{"n":"丹尼船長 米的洋芋片黑松露風味","s":"每包50公克 8包入","g":"eat","k":"cut","o":269,"p":215.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.799},{"n":"西雅圖 即品拿鐵咖啡","s":"每包21公克 100包入","g":"eat","k":"cut","o":749,"p":599.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":4,"r":0.8},{"n":"桂格 黃金蕎麥多穀飲","s":"每包28公克 50包入","g":"eat","k":"cut","o":399,"p":319.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.799},{"n":"大拙匠人 冷凍鵝油雙蔥煎餅","s":"每片100公克 每包4片 5包入","g":"eat","k":"cut","o":399,"p":319.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.799},{"n":"老食粹 有機枸杞","s":"600公克","g":"eat","k":"cut","o":499,"p":399.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.8},{"n":"老食粹 有機紅棗","s":"600公克","g":"eat","k":"cut","o":299,"p":239.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.799},{"n":"星巴克 中度烘焙即溶咖啡","s":"每包2.3公克 30包入","g":"eat","k":"cut","o":499,"p":399.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.8},{"n":"豐力富 頂級純濃奶粉","s":"2.6公斤","g":"eat","k":"cut","o":769,"p":615.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.8},{"n":"桂格 北海道風味特濃燕麥","s":"每包42公克 48包入","g":"eat","k":"cut","o":499,"p":399.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.8},{"n":"大成 冷凍椒鹽薄皮炸雞","s":"1.55公斤","g":"eat","k":"cut","o":399,"p":319.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":5,"r":0.799},{"n":"王品 冷凍青花驕經典麻辣鍋","s":"1.6公斤","g":"eat","k":"cut","o":569,"p":449.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":6,"r":0.789},{"n":"挺立 關鍵迷你錠","s":"90錠","g":"use","k":"cut","o":1799,"p":1439.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":6,"r":0.8},{"n":"王品 三大名店冷凍火鍋料","s":"1.1公斤","g":"eat","k":"cut","o":389,"p":299.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":6,"r":0.769},{"n":"享點子 泰式椰奶綠咖哩雞","s":"每包520公克 2包入","g":"eat","k":"cut","o":369,"p":289.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":6,"r":0.783},{"n":"科克蘭 提拉米蘇","s":"","g":"eat","k":"cut","o":259,"p":205.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":6,"r":0.792},{"n":"正官庄 高麗蔘精 EVERYTIME","s":"每條10毫升 30條入","g":"use","k":"cut","o":1199,"p":959.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":7,"r":0.8},{"n":"益節 葡萄糖胺 6 IN 1 精華飲","s":"每包25毫升 30包入","g":"use","k":"cut","o":1299,"p":1039.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":7,"r":0.8},{"n":"樂益活 益生菌 食品","s":"120顆","g":"use","k":"cut","o":999,"p":799.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":7,"r":0.8},{"n":"善存 葉黃素液態軟膠囊","s":"140粒","g":"use","k":"cut","o":999,"p":799.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":7,"r":0.8},{"n":"補體素 鉻100 均衡營養粉狀配方食品","s":"1500公克","g":"use","k":"cut","o":1299,"p":1099.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"","pg":7,"r":0.846},{"n":"五月花 厚棒抽取衛生紙","s":"每包100抽 每袋20包入 × 3袋裝","g":"use","k":"cut","o":1149,"p":919.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.8},{"n":"明治 明倍適營養補充杯 草莓 / 香蕉口味","s":"每杯125毫升 皆為36杯入","g":"eat","k":"cut","o":1899,"p":1519.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.8},{"n":"舒適牌 水次元 5 刮鬍刀組","s":"一刀架+九刀片","g":"use","k":"cut","o":519,"p":399.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.769},{"n":"Kohler 電熱毛巾架","s":"110V／型號 29355TW-7","g":"use","k":"cut","o":8399,"p":6699.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.798},{"n":"TCL 12 公斤直立式洗衣機","s":"型號 P312TLG","g":"use","k":"cut","o":9999,"p":7999.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.8},{"n":"Looploop TAG 物品尋找器含配件","s":"4入組+4配件 / 共四色 / AT-10","g":"use","k":"cut","o":1499,"p":1199.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.8},{"n":"Mio MIVUE MP05 前後雙2K 鏡頭 1440P 機車行車記錄器 附 32GB 記憶卡","s":"附 32GB 記憶卡","g":"use","k":"cut","o":3489,"p":2789.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.799},{"n":"Adidas 女休閒鞋","s":"美國尺寸約：6-9","g":"use","k":"cut","o":1259,"p":999.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":8,"r":0.793},{"n":"Neoflam 雙耳四格多功能煎鍋含蓋","s":"約28公分","g":"use","k":"cut","o":1769,"p":1369.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":9,"r":0.774},{"n":"美康雅 二合一掛燙刷熨斗","s":"型號 GS308TW","g":"use","k":"cut","o":1999,"p":1379.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":9,"r":0.69},{"n":"伊萊克斯 氣炸旋風烤箱","s":"型號 EOT3215XFG","g":"use","k":"cut","o":4699,"p":3759.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":9,"r":0.8},{"n":"CASA 雙人記憶釋壓床墊","s":"尺寸約：152 × 190 × 5公分","g":"use","k":"cut","o":3999,"p":3199.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":9,"r":0.8},{"n":"Blackmores 澳佳寶 DHA 精粹濃縮深海魚油膠囊食品","s":"每瓶60粒 2瓶入","g":"use","k":"cut","o":1769,"p":1409.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":9,"r":0.796},{"n":"威德 一日補給50+","s":"30包入","g":"use","k":"cut","o":1299,"p":1039.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":9,"r":0.8},{"n":"善存 舒眠益生菌膠囊","s":"120粒","g":"use","k":"cut","o":1969,"p":1574.0,"si":null,"a":null,"rg":false,"mt":"","u":"件","c":"僅限好市多線上購物（網購價）","pg":9,"r":0.799}];
+const $ = s => document.querySelector(s);
+const st = {q:'', g:'all', bogo:false, sort:'dm'};
+const h = h0 => (h0 || '').replace(/^#/, '');
+if (['eat','use'].includes(h(location.hash))) st.g = h(location.hash);
+
+const num = v => typeof v === 'string' ? v : (Math.round(v * 10) / 10).toString();
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function hi(text, q){
+  const t = esc(text);
+  if (!q) return t;
+  const words = q.split(/\s+/).filter(Boolean).map(w => esc(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  return words.length ? t.replace(new RegExp('(' + words.join('|') + ')', 'gi'), '<mark>$1</mark>') : t;
+}
+function price(it){
+  const unit = it.u ? `<small>元/${esc(it.u)}</small>` : '<small>元</small>';
+  if (it.k === 'cut') {
+    const off = (it.r * 10).toFixed(1).replace(/\.0$/, '');
+    return `<div class="was">原價 <s>${num(it.o)}</s></div><div class="now">${num(it.p)}${unit}</div><span class="tag">${off} 折${it.rg ? '起' : ''}</span>`;
+  }
+  if (it.k === 'sale') return `<div class="now">${num(it.p)}${unit}</div><span class="tag">特價</span>`;
+  const was = it.si ? `<div class="was">單件 ${num(it.si)}</div>` : '';
+  const now = it.a ? `<div class="now"><small>平均</small>${num(it.a)}${unit}</div>` : '';
+  return `${was}${now}<span class="tag">${it.k === 'multi' ? esc(it.mt) : '買一送一'}</span>`;
+}
+function eff(it){ return (it.k === 'cut' || it.k === 'sale') ? it.p : (it.a || it.si || 0); }
+
+function render(){
+  const q = st.q.trim().toLowerCase();
+  const words = q.split(/\s+/).filter(Boolean);
+  let rows = D.filter(it => (st.g === 'all' || it.g === st.g) && (!st.bogo || it.k === 'bogo')
+    && words.every(w => (it.n + ' ' + it.s).toLowerCase().includes(w)));
+  if (st.sort === 'off') rows = rows.slice().sort((a, b) => a.r - b.r || a.pg - b.pg);
+  if (st.sort === 'low') rows = rows.slice().sort((a, b) => eff(a) - eff(b));
+  $('#list').innerHTML = rows.map(it => `<li class="item">
+    <div class="name">${hi(it.n, st.q.trim())}</div>
+    <div class="price">${price(it)}</div>
+    <div class="sub">${esc(it.s)}${it.s ? '・' : ''}DM 第 ${it.pg} 頁</div>
+    <div class="cond">${esc(it.c)}</div></li>`).join('');
+  $('#count').textContent = `顯示 ${rows.length} 樣` + (rows.length < D.length ? `（共 ${D.length} 樣）` : '');
+  const e = $('#empty');
+  e.hidden = rows.length > 0;
+  if (!rows.length) e.textContent = q ? `找不到「${st.q.trim()}」，換個字試試，或切回「全部」。` : '這個分類沒有東西。';
+  document.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.g === st.g));
+  document.querySelector('[data-k="bogo"]').setAttribute('aria-pressed', st.bogo);
+  $('#clr').hidden = !st.q;
+}
+$('#q').addEventListener('input', e => { st.q = e.target.value; render(); });
+$('#clr').addEventListener('click', () => { st.q = ''; $('#q').value = ''; $('#q').focus(); render(); });
+document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+  st.g = b.dataset.g; history.replaceState(null, '', st.g === 'all' ? location.pathname : '#' + st.g); render();
+}));
+document.querySelector('[data-k="bogo"]').addEventListener('click', () => { st.bogo = !st.bogo; render(); });
+// 10-08 Benson：這檔沒有買一送一（好市多）就不顯示這顆按鈕
+if (!D.some(it => it.k === 'bogo')) document.querySelector('[data-k="bogo"]').style.display = 'none';
+$('#sort').addEventListener('change', e => { st.sort = e.target.value; render(); });
+render();
+</script>
+</body>
+</html>
